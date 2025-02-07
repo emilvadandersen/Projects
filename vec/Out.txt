@@ -1,0 +1,11 @@
+Vector 1: (1 2 3)
+Vector 2: (4 5 6)
+Addition: (5 7 9)
+Subtraction: (-3 -3 -3)
+Multiplication by 2: (2 4 6)
+Division by 2: (0,5 1 1,5)
+Dot Product: 32
+Absolute difference: 3, Relative difference: 0,6
+Approximation using instance method: False
+Absolute difference: 3, Relative difference: 0,6
+Approximation using static method: False
