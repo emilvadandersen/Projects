@@ -1,0 +1,24 @@
+√-1 = Re: 0 ; Im: 1
+// The square root of -1 is i (0 + 1i). In C#. it returns the principal root. which is i.
+// Approximation check: Pass
+
+√i = Re: 0.707106781186548 ; Im: 0.707106781186547
+// The square root of i is e^(iπ/4). which is 1/√2 + i/√2. It is one of the two possible roots.
+// Approximation check: Pass
+
+ln(i) = Re: 0 ; Im: 1.5707963267949
+// The natural logarithm of i is iπ/2. This is the principal branch of the logarithm.
+// Approximation check: Pass
+
+i^i = 0.207879576350762
+// i^i is a real number. and it evaluates to e^(-π/2). which is approximately 0.208.
+// Approximation check: Pass
+
+e^(iπ) = Re: -1 ; Im: 1.22464679914735E-16
+// e^(iπ) is Euler's formula. which simplifies to -1.
+// Approximation check: Pass
+
+sin(iπ) = Re: 0 ; Im: 11.5487393572577
+// sin(iπ) is equivalent to sinh(π). since the sine of an imaginary number is the hyperbolic sine.
+// Approximation check (imaginary part only): Pass
+
