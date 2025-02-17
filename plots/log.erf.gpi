@@ -1,0 +1,1 @@
+ 	set terminal svg; 	set output "plot.erf.svg"; 	set key left ;	plot  		"data.txt" index 0 with lines title "erf(x)" 		,"erf.data" with points pointtype 4 title "tabulated erf(x)" 
