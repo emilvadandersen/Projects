@@ -1,0 +1,25 @@
+=== Maximum/Minimum Integers ===
+Max Integer Found: 2147483647
+Expected int.MaxValue: 2147483647
+Min Integer Found: -2147483648
+Expected int.MinValue: -2147483648
+
+=== Machine Epsilon ===
+Machine Epsilon (double): 2,22044604925031E-16 (Expected: 2,22044604925031E-16)
+Machine Epsilon (float): 1,192093E-07 (Expected: 1,19209289550781E-07)
+
+=== Floating-Point Comparison ===
+a: 1
+b: 1
+a > b (Expected: a is slightly greater than b)
+d1: 1
+d2: 1
+d1 == d2: False (Expected: false due to floating-point errors)
+ApproxEqual(d1, d2): True (Expected: true, using proper comparison)
+
+=== Testing ApproxEqual Function ===
+x: 0,3, y: 0,3
+x == y: False (Direct comparison fails)
+ApproxEqual(x, y): True (Using correct method)
+a: 10000000000, b: 10000000001
+ApproxEqual(a, b): True (Checks relative precision)

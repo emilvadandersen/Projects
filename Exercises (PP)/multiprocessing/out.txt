@@ -1,0 +1,16 @@
+Running harmonic sum calculations...
+Manual Multithreading Results:
+Using manual multithreading with 1 threads
+Harmonic sum: 18,9978964138526
+Using manual multithreading with 2 threads
+Harmonic sum: 18,997896413853
+Using manual multithreading with 4 threads
+Harmonic sum: 18,9978964138499
+Using manual multithreading with 8 threads
+Harmonic sum: 18,9978964138519
+Parallel.For (Incorrect) Result:
+Using Parallel.For (Incorrect method)
+Harmonic sum: 16,1511194395536
+Parallel.For with ThreadLocal Result:
+Using Parallel.For with ThreadLocal (Correct method)
+Harmonic sum: 18,9978964138531

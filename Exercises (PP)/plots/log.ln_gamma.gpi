@@ -1,0 +1,1 @@
+ 	set terminal svg; 	set output "plot.ln_gamma.svg"; 	set key bottom ;	set xlabel "x" ;	set ylabel "ln(Î“(x))" ;	plot [-4:][-20:20] 		"data.txt" index 2 with lines title "ln(gamma(x))" 
