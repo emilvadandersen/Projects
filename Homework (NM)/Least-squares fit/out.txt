@@ -1,0 +1,36 @@
+QR for 5x3 matrix
+Matrix A:
+
+         8          6         10 
+         2          1          4 
+         7         10          5 
+         6          4          4 
+         5          4          7 
+Matrix Q:
+
+       0.6     -0.324      0.282 
+      0.15     -0.199      0.391 
+     0.525      0.839    -0.0616 
+      0.45     -0.361     -0.773 
+     0.375     -0.143      0.407 
+Matrix R:
+
+      13.3       12.3       13.6 
+         0       4.23      -2.29 
+         0          0       3.83 
+Reconstructed matrix A (Q * R):
+
+         8          6         10 
+         2          1          4 
+         7         10          5 
+         6          4          4 
+         5          4          7 
+
+Fit parameters: a ≈ 4.963; b ≈ 0.172
+Half-life is: 4.033 days (expected ~3.63 days)
+Covariance matrix:
+     0.368     0.0339 
+    0.0339     0.0042 
+Uncertainties in the fitting parameters: 0.606; 0.065
+Uncertainty in half-life: 0.261
+The calculated half-life does not agree with the expected value within the estimated uncertainty.
