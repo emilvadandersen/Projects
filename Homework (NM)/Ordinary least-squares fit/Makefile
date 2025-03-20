@@ -1,3 +1,6 @@
+# The target to generate the output files
+all: plot.decay.svg out.txt
+
 # Build output text file
 out.txt: main.exe
 	mono main.exe > out.txt
@@ -11,23 +14,18 @@ library.dll: matrix.cs vector.cs qr.cs lsfit.cs
 main.exe: main.cs library.dll
 	mcs -target:exe -out:main.exe -reference:library.dll main.cs
 
-# Generate plot using Gnuplot
-plot.decay.svg: log.decay.gpi data.txt
-	gnuplot log.decay.gpi
-
-# Create the Gnuplot script
-log.decay.gpi:
-	echo "\
-		set terminal svg background 'white' ;\
-		set output 'plot.decay.svg' ;\
-		set xlabel 'Time (days)' ;\
-		set ylabel 'ln(Activity)' ;\
-		set grid ;\
-		set title 'Radioactive Decay Fit for 224Ra' ;\
-		plot 'data.txt' using 1:2:3 with yerrorbars title 'Experimental Data' lc rgb 'red' pt 7 ps 0.8, \
-		     exp(4.963 - 0.172*x) with lines lc 'blue' dashtype '--' title 'Best Fit' ;\
-	" > log.decay.gpi
+# Plotting radioactive decay
+plot.decay.svg: data.txt Makefile
+	echo 'set terminal svg background "white"; \
+	set output "$@"; \
+	set xlabel "Time (days)"; \
+	set ylabel "ln(Activity)"; \
+	set grid; \
+	set title "Radioactive Decay Fit for 224Ra"; \
+	plot "data.txt" using 1:2:3 with yerrorbars title "Experimental Data" lc rgb "red" pt 7 ps 0.8 lw 1.5, \
+	exp(4.963 - 0.172*x) with lines lw 2 lc rgb "blue" dashtype "--" title "Best Fit";' \
+	| tee log.decay.gpi | gnuplot
 
 # Clean up generated files
 clean:
-	rm -f *.dll *.exe *.svg out.txt
+	rm -f *.dll *.exe *.svg out.txt log*

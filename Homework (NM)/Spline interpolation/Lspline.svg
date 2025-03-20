@@ -321,12 +321,14 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 	<g id="gnuplot_plot_1" ><title>Linear Spline</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="#FFFFFF" stroke="black" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+</g>
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,66.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Linear Spline</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(  0,   0, 255)'  d='M540.65,63.01 L583.21,63.01 M72.53,54.01 L72.88,54.86 L73.23,55.70 L73.59,56.55 L73.94,57.40 L74.29,58.24
 		L74.64,59.09 L75.00,59.94 L75.35,60.78 L75.70,61.63 L76.05,62.48 L76.41,63.32 L76.76,64.17 L77.11,65.02
 		L77.46,65.86 L77.82,66.71 L78.17,67.56 L78.52,68.40 L78.87,69.25 L79.22,70.10 L79.58,70.94 L79.93,71.79
@@ -442,12 +444,12 @@
 		L387.52,397.57 L387.87,398.98 L388.22,400.39 L388.57,401.80 L388.93,403.21 L389.28,404.62 L389.63,406.03  '/></g>
 	</g>
 	<g id="gnuplot_plot_2" ><title>Integral</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,84.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Integral</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(  0,   0,   0)'  d='M540.65,81.01 L583.21,81.01 M72.53,238.20 L72.88,238.20 L73.23,238.20 L73.59,238.20 L73.94,238.20 L74.29,238.20
 		L74.64,238.20 L75.00,238.20 L75.35,238.20 L75.70,238.20 L76.05,238.20 L76.41,238.20 L76.76,238.20 L77.11,238.20
 		L77.46,238.20 L77.82,238.20 L78.17,238.20 L78.52,238.20 L78.87,238.20 L79.22,238.20 L79.58,238.20 L79.93,238.20
@@ -563,6 +565,8 @@
 		L387.52,71.42 L387.87,71.42 L388.22,71.42 L388.57,71.42 L388.93,71.42 L389.28,71.42 L389.63,71.42  '/></g>
 	</g>
 	<g id="gnuplot_plot_3" ><title>Cos Data Points</title>
+<g fill="none" color="#FFFFFF" stroke="rgb(  0,   0,   0)" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+</g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,102.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Cos Data Points</tspan></text>

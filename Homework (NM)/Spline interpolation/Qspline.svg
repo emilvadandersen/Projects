@@ -282,12 +282,14 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 	<g id="gnuplot_plot_1" ><title>Quadratic Spline</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="#FFFFFF" stroke="black" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+</g>
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,66.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Quadratic Spline</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(  0,   0, 255)'  d='M540.65,63.01 L583.21,63.01 M72.53,264.52 L72.87,263.72 L73.22,262.92 L73.56,262.12 L73.90,261.31 L74.25,260.51
 		L74.59,259.70 L74.93,258.89 L75.27,258.08 L75.62,257.27 L75.96,256.45 L76.30,255.64 L76.65,254.82 L76.99,254.00
 		L77.33,253.18 L77.68,252.35 L78.02,251.53 L78.36,250.70 L78.70,249.87 L79.05,249.04 L79.39,248.21 L79.73,247.38
@@ -403,12 +405,12 @@
 		L379.18,217.00 L379.52,217.69 L379.87,218.37 L380.21,219.06 L380.55,219.75 L380.90,220.45 L381.24,221.14  '/></g>
 	</g>
 	<g id="gnuplot_plot_2" ><title>Derivative</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,84.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Derivative</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(255, 165,   0)'  d='M540.65,81.01 L583.21,81.01 M72.53,184.75 L72.87,184.57 L73.22,184.39 L73.56,184.22 L73.90,184.04 L74.25,183.87
 		L74.59,183.69 L74.93,183.51 L75.27,183.34 L75.62,183.16 L75.96,182.99 L76.30,182.81 L76.65,182.63 L76.99,182.46
 		L77.33,182.28 L77.68,182.11 L78.02,181.93 L78.36,181.76 L78.70,181.58 L79.05,181.40 L79.39,181.23 L79.73,181.05
@@ -524,12 +526,12 @@
 		L379.18,333.02 L379.52,333.19 L379.87,333.37 L380.21,333.54 L380.55,333.72 L380.90,333.90 L381.24,334.07  '/></g>
 	</g>
 	<g id="gnuplot_plot_3" ><title>Integral</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,102.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Integral</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(  0,   0,   0)'  d='M540.65,99.01 L583.21,99.01 M72.53,264.52 L72.87,264.51 L73.22,264.50 L73.56,264.48 L73.90,264.45 L74.25,264.42
 		L74.59,264.37 L74.93,264.32 L75.27,264.26 L75.62,264.19 L75.96,264.12 L76.30,264.03 L76.65,263.94 L76.99,263.84
 		L77.33,263.73 L77.68,263.61 L78.02,263.49 L78.36,263.35 L78.70,263.21 L79.05,263.06 L79.39,262.90 L79.73,262.73
@@ -645,6 +647,8 @@
 		L379.18,70.70 L379.52,70.22 L379.87,69.76 L380.21,69.30 L380.55,68.85 L380.90,68.41 L381.24,67.97  '/></g>
 	</g>
 	<g id="gnuplot_plot_4" ><title>Sin Data Points</title>
+<g fill="none" color="#FFFFFF" stroke="rgb(  0,   0,   0)" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+</g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(532.26,120.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Sin Data Points</tspan></text>

@@ -1,0 +1,1 @@
+set terminal svg background "white"; set out "Plot.erf.svg"; set title "erf(x) as a definite integral"; set xlabel "x"; set ylabel "erf(x)"; set key out; set grid; plot "out.erf.data.txt" index 0 using 1:2 with lines lw 2 lc rgb "blue" title "erf(x)", "out.erf.data.txt" index 1 using 1:2 with points pt 7 ps 1 lc rgb "red" title "table";

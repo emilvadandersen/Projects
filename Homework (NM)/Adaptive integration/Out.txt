@@ -1,0 +1,33 @@
+Recursive Adaptive Integrator:
+
+∫_0^1 √x dx = 0.666953909054655; expected 0.666666666666667
+Absolute Error: 0.000287242387988385
+Function Evaluations: 7
+
+∫_0^1 1/√x dx = 1.99996150007805; expected 2
+Absolute Error: 3.84999219513738E-05
+Function Evaluations: 4285
+
+∫_0^1 4√(1-x²) dx = 3.14183457802727; expected 3.14159265358979
+Absolute Error: 0.000241924437474506
+Function Evaluations: 13
+
+∫_0^1 ln(x)/√x dx = -3.99991705899915; expected -4
+Absolute Error: 8.29410008478249E-05
+Function Evaluations: 4301
+
+Clenshaw–Curtis Adaptive Integrator:
+
+∫_0^1 1/√x dx using Clenshaw–Curtis = 1.99999201046432; expected 2
+Absolute Error: 7.98953567793248E-06
+Function Evaluations: 7
+Scipy Reference Evaluations: 117
+
+∫_0^1 ln(x)/√x dx using Clenshaw–Curtis = -3.99987385646141; expected -4
+Absolute Error: 0.00012614353859286
+Function Evaluations: 47
+Scipy Reference Evaluations: 315
+
+Comparison:
+
+Normal integration routine is slower than Python. The Clenshaw–Curtis implementation is faster than Python.

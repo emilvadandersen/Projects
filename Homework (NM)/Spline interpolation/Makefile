@@ -34,8 +34,8 @@ Lspline.svg: linInter.txt linInterInteg.txt cosTable.txt Makefile
 	set ylabel 'y'; \
 	set key out; \
 	set grid; \
-	plot 'linInter.txt' using 1:2 with lines lt 7 lc rgb 'blue' title 'Linear Spline', \
-	'linInterInteg.txt' using 1:2 with lines lt 7 lc rgb 'black' title 'Integral', \
+	plot 'linInter.txt' using 1:2 with lines lw 2 lc rgb 'blue' title 'Linear Spline', \
+	'linInterInteg.txt' using 1:2 with lines lw 2 lc rgb 'black' title 'Integral', \
 	'cosTable.txt' using 1:2 with points pt 7 ps 1 lc rgb 'red' title 'Cos Data Points';" \
 	| tee log.lin.gpi | gnuplot
 
@@ -48,12 +48,12 @@ Qspline.svg: quaInter.txt quaInterInteg.txt sinTable.txt Makefile
 	set ylabel "y"; \
 	set key out; \
 	set grid; \
-	plot "quaInter.txt" using 1:2 with lines lt 7 lc rgb "blue" title "Quadratic Spline", \
-	"quaInter.txt" using 1:3 with lines lt 7 lc rgb "#FFA500" title "Derivative", \
-	"quaInterInteg.txt" using 1:2 with lines lt 7 lc rgb "black" title "Integral", \
+	plot "quaInter.txt" using 1:2 with lines lw 2 lc rgb "blue" title "Quadratic Spline", \
+	"quaInter.txt" using 1:3 with lines lw 2 lc rgb "#FFA500" title "Derivative", \
+	"quaInterInteg.txt" using 1:2 with lines lw 2 lc rgb "black" title "Integral", \
 	"sinTable.txt" using 1:2 with points pt 7 ps 1 lc rgb "red" title "Sin Data Points";' \
 	| tee log.qua.gpi | gnuplot
 
 # Clean up intermediate and output files
 clean:
-	rm -f *.dll *.exe *.txt *.svg
+	rm -f *.dll *.exe *.txt *.svg log.*.gpi

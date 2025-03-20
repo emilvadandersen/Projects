@@ -1,0 +1,1 @@
+set terminal svg background "white"; set out "pendulum.svg"; set title "Damped Pendulum Motion"; set xlabel "Time (t)"; set ylabel "Angle and Velocity"; set grid; plot "theta.txt" using 1:2 with lines lw 2 lc rgb "blue" title "Theta (t)", "omega.txt" using 1:2 with lines lw 2 lc rgb "red" title "Omega (t)";
