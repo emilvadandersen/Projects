@@ -1,0 +1,30 @@
+
+
+*******************************************************************************
+Wed Mar 26 18:10:16 2025
+
+
+FIT:    data read from "Out_pseudo_random.txt" using 1:4
+        format = x:z
+        #datapoints = 50
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a/sqrt(x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 5.0348361247e-02   0.00e+00  2.12e-02    1.000000e+00
+   3 2.7880654759e-02  -1.24e-06  2.12e-05    1.999370e+00
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 0.0278807
+rel. change during last iteration : -1.23879e-11
+
+degrees of freedom    (FIT_NDF)                        : 49
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0238536
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000568993
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.99937          +/- 0.159        (7.954%)
