@@ -246,7 +246,7 @@ public partial class matrix
     }
 
     // Updated print method to handle small values (below threshold) as 0, and -0 as 0
-    public void print(string s = "", string format = "{0,10:g3} ", TextWriter file = null, double threshold = 1e-9)
+    public void print(string s = "", string format = "{0,10:g3} ", TextWriter file = null, double threshold = 1e-8)
     {
         if (file == null) file = System.Console.Out;
         file.WriteLine(s);
