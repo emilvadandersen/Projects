@@ -12,7 +12,7 @@ all: $(PLOT) $(OUT_TXT)
 $(EXEC): $(SRC)
 	mcs -target:exe -out:$@ $(SRC)
 
-# Run the program and fix formatting
+# Run the program and fix commas
 $(OUT_TXT) $(WAVE_TXT): $(EXEC)
 	mono $(EXEC)
 	@sed -i '' 's/,/\./g' $(OUT_TXT)
