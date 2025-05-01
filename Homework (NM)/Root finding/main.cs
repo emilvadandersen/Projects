@@ -58,10 +58,10 @@ class main {
 
             // --- Convergence study: vary rmin, rmax, acc, eps ---
             output.WriteLine("Convergence study:");
-            double[] rmins = { 1e-4, 1e-5 };
-            double[] rmaxs = { 6, 8 };
-            double[] accs = { 1e-3, 1e-6 };
-            double[] epss = { 1e-3, 1e-6 };
+            double[] rmins = { 1e-1, 5e-1 };
+            double[] rmaxs = { 4, 8 };
+            double[] accs = { 1e-1, 1e-2 };
+            double[] epss = { 1e-1, 1e-2 };
 
             foreach (var rmin in rmins)
             foreach (var rmax in rmaxs)
@@ -71,6 +71,14 @@ class main {
                 Hydrogen.rmax = rmax;
                 Hydrogen.acc = acc;
                 Hydrogen.eps = eps;
+
+                // Check that the root is bracketed before applying bisection
+                double fa = M(-1.0), fb = M(-0.1);
+                if (fa * fb > 0) {
+                    output.WriteLine($"rmin={rmin} rmax={rmax} acc={acc} eps={eps} => Root not bracketed");
+                    continue;
+                }
+
                 double E = Bisection(M, -1.0, -0.1, 1e-6);
                 double err = Math.Abs(E + 0.5);
                 output.WriteLine($"rmin={rmin} rmax={rmax} acc={acc} eps={eps} => E={E} err={err}");
