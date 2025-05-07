@@ -1,10 +1,11 @@
 using System;
+using System.Diagnostics;
 
 class MainClass
 {
     static void Main()
     {
-        var rnd = new System.Random(1);
+        var rnd = new Random(1);
         int n = 4;  // Number of rows and columns for square matrix (n x n)
         int m = 3;  // Number of columns for the tall matrix (n > m)
 
@@ -138,5 +139,46 @@ class MainClass
             }
         }
         Console.WriteLine("Inverse Check (AB = I): " + (inverseCheck ? "Passed" : "Failed"));
+
+        Console.WriteLine();
+        Console.WriteLine("---- QR Decomposition Timing ----");
+        Console.WriteLine();
+
+        // Measure time for QR decomposition on different matrix sizes
+        int[] sizes = new int[] { 20, 60, 100, 140, 180, 220 };
+
+        // Create a file to store the time data
+        System.IO.StreamWriter writer = new System.IO.StreamWriter("out.times.data");
+
+        // Iterate over the different sizes and measure time
+        foreach (int size in sizes)
+        {
+            // Generate a random NxN matrix
+            matrix A_timing = new matrix(size, size);
+            for (int i = 0; i < size; i++)
+                for (int j = 0; j < size; j++)
+                    A_timing[i, j] = rnd.NextDouble();
+
+            // Start the timer
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            // Perform QR Decomposition
+            QRGS qr_timing = new QRGS(A_timing);
+
+            // Stop the timer
+            stopwatch.Stop();
+
+            // Output the time for QR decomposition for this matrix size
+            double elapsedTime = stopwatch.Elapsed.TotalSeconds;
+            Console.WriteLine($"Time for {size}x{size} matrix: {elapsedTime} seconds");
+
+            // Write the matrix size and time to the file
+            writer.WriteLine($"{size} {elapsedTime}");
+        }
+
+        // Close the file after writing the data
+        writer.Close();
+
     }
 }

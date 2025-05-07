@@ -61,3 +61,12 @@ AB (Should be Identity):
          0          0          1          0 
          0          0          0          1 
 Inverse Check (AB = I): Passed
+
+---- QR Decomposition Timing ----
+
+Time for 20x20 matrix: 0.0005263 seconds
+Time for 60x60 matrix: 0.001729 seconds
+Time for 100x100 matrix: 0.005171 seconds
+Time for 140x140 matrix: 0.0119033 seconds
+Time for 180x180 matrix: 0.0252028 seconds
+Time for 220x220 matrix: 0.045922 seconds
