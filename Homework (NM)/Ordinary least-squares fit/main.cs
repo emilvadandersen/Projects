@@ -4,100 +4,102 @@ using System.Globalization;
 
 public class main {
     static void Main() {
-        System.Console.WriteLine("QR for 5x3 matrix");
-
-        // Create a random number generator
+        // --- QR Decomposition Part ---
+        Console.WriteLine("QR for 5x3 matrix");
+        Console.WriteLine("Matrix A:");
+        
         Random rand = new Random();
-
-        // Define a new 5x3 matrix A with random numbers between 1 and 10
         matrix A = new matrix(5, 3);
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 3; j++) {
-                A[i, j] = rand.Next(1, 11);  // Random integer between 1 and 10
+                A[i, j] = rand.Next(1, 11);
             }
         }
-
-        // Print the matrix A
-        Console.WriteLine("Matrix A:");
         A.print();
 
-        // Perform QR decomposition
         (matrix Q, matrix R) = QRGS.decomp(A);
 
-        // Print Q and R matrices
         Console.WriteLine("Matrix Q:");
         Q.print();
         Console.WriteLine("Matrix R:");
         R.print();
 
-        // Verify QR decomposition by multiplying Q and R
         matrix A_reconstructed = Q * R;
         Console.WriteLine("Reconstructed matrix A (Q * R):");
         A_reconstructed.print();
 
-        // Least-squares fit part
-        int noOfDataPoints = 9;  // Number of data points
-        vector x = new vector(noOfDataPoints);  // Independent variable x
-        vector y = new vector(noOfDataPoints);  // Dependent variable y
-        vector dy = new vector(noOfDataPoints); // Uncertainties in y (dy)
-        string filename = "data.txt";  // Data file location
+        // --- Least-Squares Fit Part ---
+        Console.WriteLine();
+        Console.WriteLine("Least-squares fit to radioactive decay:");
 
-        // Read data from the file
+        int noOfDataPoints = 9;
+        vector x = new vector(noOfDataPoints);
+        vector y = new vector(noOfDataPoints);
+        vector dy = new vector(noOfDataPoints);
+        string filename = "data.txt";
+
         string[] lines = File.ReadAllLines(filename);
-
         for (int i = 0; i < noOfDataPoints; i++) {
             try {
                 string[] parts = lines[i].Split(new char[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries);
-                x[i] = double.Parse(parts[0], CultureInfo.InvariantCulture);  // Parse x
-                y[i] = double.Parse(parts[1], CultureInfo.InvariantCulture);  // Parse y
-                dy[i] = double.Parse(parts[2], CultureInfo.InvariantCulture); // Parse dy (uncertainty)
+                x[i] = double.Parse(parts[0], CultureInfo.InvariantCulture);
+                y[i] = double.Parse(parts[1], CultureInfo.InvariantCulture);
+                dy[i] = double.Parse(parts[2], CultureInfo.InvariantCulture);
             } catch (FormatException ex) {
                 Console.WriteLine($"Error parsing line {i + 1}: '{lines[i]}'. Exception: {ex.Message}");
-                return;  // Stop execution if parsing fails
+                return;
             }
         }
 
-        // Transform the data (take logarithm of y, and adjust dy)
+        // Transform the data
         for (int i = 0; i < noOfDataPoints; i++) {
-            y[i] = Math.Log(y[i]);  // Apply logarithmic transformation to y
-            dy[i] /= y[i];  // Adjust uncertainty
+            y[i] = Math.Log(y[i]);
+            dy[i] /= y[i];
         }
 
-        // Define the basis functions for the least-squares fit
-        var fs = new Func<double, double>[] { z => 1.0, z => -z };  // Linear model: y = a - b*x
+        var fs = new Func<double, double>[] { z => 1.0, z => -z };
 
-        // Perform least-squares fitting using the defined basis functions
         leastsquares ls = new leastsquares();
         (vector res, matrix cov) = ls.lsfit(fs, x, y, dy);
 
-        // Extract the fit parameters a (intercept) and b (decay constant)
-        double a = res[0];
-        double b = res[1];
+        double a = res[0], b = res[1];
 
-        // Display the fitted parameters
-        Console.WriteLine($"\nFit parameters: a ≈ {a:F3}; b ≈ {b:F3}");
-        
-        // Calculate the half-life from the decay constant b
+        Console.WriteLine();
+        Console.WriteLine($"Fit parameters (from ln(Activity) = a - b*t):");
+        Console.WriteLine($"a ≈ {a:F3} (ln(A₀)) and b ≈ {b:F3} (decay constant)");
+
         double halflife = Math.Log(2) / b;
-        Console.WriteLine($"Half-life is: {halflife:F3} days (expected ~3.63 days)");
+        Console.WriteLine($"Half-life = ln(2)/b ≈ {halflife:F3} days (expected ~3.63 days)");
 
-        // Print the covariance matrix
-        cov.print("Covariance matrix:");
+        Console.WriteLine();
+        Console.WriteLine("Covariance matrix (in ln-domain):");
+        cov.print();
 
-        // Extract the uncertainties on the fitted parameters
-        double uncer1 = Math.Sqrt(cov[0, 0]);  // Uncertainty in intercept a
-        double uncer2 = Math.Sqrt(cov[1, 1]);  // Uncertainty in decay constant b
-        Console.WriteLine($"Uncertainties in the fitting parameters: {uncer1:F3}; {uncer2:F3}");
+        double uncer1 = Math.Sqrt(cov[0, 0]);
+        double uncer2 = Math.Sqrt(cov[1, 1]);
 
-        // Calculate the uncertainty in the half-life
+        Console.WriteLine($"Uncertainties in the fitting parameters:");
+        Console.WriteLine($"  σ_a ≈ {uncer1:F3}");
+        Console.WriteLine($"  σ_b ≈ {uncer2:F3}");
+
         double halflifeuncer = Math.Log(2) * uncer2 / b;
-        Console.WriteLine($"Uncertainty in half-life: {halflifeuncer:F3}");
+        Console.WriteLine($"Uncertainty in half-life: {halflifeuncer:F3} days");
 
-        // Compare the calculated half-life with the expected value (3.63 days)
+        Console.WriteLine();
         if (halflife - halflifeuncer <= 3.63 && halflife + halflifeuncer >= 3.63) {
             Console.WriteLine("The calculated half-life agrees with the expected value within the estimated uncertainty.");
         } else {
             Console.WriteLine("The calculated half-life does not agree with the expected value within the estimated uncertainty.");
+        }
+
+        // Write fit bands to file
+        using (StreamWriter sw = new StreamWriter("fitbands.txt")) {
+            for (double z = 0; z <= 15; z += 0.1) {
+                double best = a - b * z;
+                double upper = (a + uncer1) - (b - uncer2) * z;
+                double lower = (a - uncer1) - (b + uncer2) * z;
+                sw.WriteLine($"{z} {best} {upper} {lower}");
+            }
         }
     }
 }

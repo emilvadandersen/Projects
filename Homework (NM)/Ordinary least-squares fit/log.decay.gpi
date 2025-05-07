@@ -1,1 +1,0 @@
-set terminal svg background "white"; set output "plot.decay.svg"; set xlabel "Time (days)"; set ylabel "ln(Activity)"; set grid; set title "Radioactive Decay Fit for 224Ra"; plot "data.txt" using 1:2:3 with yerrorbars title "Experimental Data" lc rgb "red" pt 7 ps 0.8 lw 1.5, exp(4.963 - 0.172*x) with lines lw 2 lc rgb "blue" dashtype "--" title "Best Fit";

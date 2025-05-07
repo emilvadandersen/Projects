@@ -1,36 +1,44 @@
 QR for 5x3 matrix
 Matrix A:
 
-         5          5         10 
-         6          9          2 
-         4          7          1 
-         5          3          5 
-         4          2          3 
+         6          1          1 
+         8          3          1 
+        10          1          4 
+         3          1          7 
+         9          2          4 
 Matrix Q:
 
-      0.46     -0.102       0.87 
-     0.552       0.48     -0.256 
-     0.368      0.521     -0.109 
-      0.46     -0.504     -0.187 
-     0.368     -0.483     -0.361 
+     0.352     -0.147     -0.208 
+      0.47       0.74     -0.301 
+     0.587      -0.62    0.00804 
+     0.176      0.207      0.926 
+     0.528       0.06     0.0891 
 Matrix R:
 
-      10.9         12       9.48 
-         0       4.98      -3.51 
-         0          0       6.06 
+        17       3.58       6.52 
+         0       1.78     -0.196 
+         0          0       6.36 
 Reconstructed matrix A (Q * R):
 
-         5          5         10 
-         6          9          2 
-         4          7          1 
-         5          3          5 
-         4          2          3 
+         6          1          1 
+         8          3          1 
+        10          1          4 
+         3          1          7 
+         9          2          4 
 
-Fit parameters: a ≈ 4.963; b ≈ 0.172
-Half-life is: 4.033 days (expected ~3.63 days)
-Covariance matrix:
+Least-squares fit to radioactive decay:
+
+Fit parameters (from ln(Activity) = a - b*t):
+a ≈ 4.963 (ln(A₀)) and b ≈ 0.172 (decay constant)
+Half-life = ln(2)/b ≈ 4.033 days (expected ~3.63 days)
+
+Covariance matrix (in ln-domain):
+
      0.368     0.0339 
     0.0339     0.0042 
-Uncertainties in the fitting parameters: 0.606; 0.065
-Uncertainty in half-life: 0.261
+Uncertainties in the fitting parameters:
+  σ_a ≈ 0.606
+  σ_b ≈ 0.065
+Uncertainty in half-life: 0.261 days
+
 The calculated half-life does not agree with the expected value within the estimated uncertainty.
