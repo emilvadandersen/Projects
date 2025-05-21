@@ -1,0 +1,16 @@
+=== PART 1: Minimization tests using known functions ===
+Rosenbrock Minimization:
+Minimum at: (0.999950491908076, 0.999900902270708)
+Expected minimum: (1, 1)
+Steps taken: 29
+
+Himmelblau Minimization:
+Minimum at: (-3.77931036622564, -3.28318602247926)
+Expected one of the minima: (3, 2) or (-2.805, 3.131) or (-3.779, -3.283) or (3.584, -1.848)
+Steps taken: 5
+
+=== PART 2: Fit to Higgs boson data ===
+Mass     m  = 125.1552 ± 0.4367
+Width    Γ  = 3.4407 ± 0.0477
+Amplitude A = 21.0679 ± 5.9163
+sqrt(χ²/N)  = 12.2589
